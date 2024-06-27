@@ -44,3 +44,14 @@ if($action == 'save_user'){
 	if($save)
 		echo $save;
 }
+if($action == 'review_and_comment_file'){
+    $save = $crud->review_and_comment_file();
+    if($save)
+        echo $save;
+}
+if($action == 'delete_user'){
+    $delete = $crud->delete_user();
+    if($delete)
+        echo $delete;
+}
+?>
