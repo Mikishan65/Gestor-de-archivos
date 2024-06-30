@@ -1,3 +1,4 @@
+<!-- files.php -->
 <?php 
 include 'db_connect.php';
 $folder_parent = isset($_GET['fid']) ? $_GET['fid'] : 0;
@@ -149,7 +150,6 @@ $files = $conn->query("SELECT * FROM files WHERE folder_id = $folder_parent AND 
     <a href="javascript:void(0)" class="custom-menu-list file-option edit"><span><i class="fa fa-edit"></i> </span>Renombrar</a>
     <a href="javascript:void(0)" class="custom-menu-list file-option download"><span><i class="fa fa-download"></i> </span>Descargar</a>
     <a href="javascript:void(0)" class="custom-menu-list file-option delete"><span><i class="fa fa-trash"></i> </span>Eliminar</a>
-    <a href="javascript:void(0)" class="custom-menu-list file-option review"><span><i class="fa fa-check-circle"></i> </span>Marcar como revisado y comentado</a>
 </div>
 
 <script>

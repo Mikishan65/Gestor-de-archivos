@@ -2,7 +2,6 @@
 session_start();
 Class Action {
     private $db;
-
     public function __construct() {
         ob_start();
         include 'db_connect.php';
@@ -11,6 +10,14 @@ Class Action {
     function __destruct() {
         $this->db->close();
         ob_end_flush();
+    }
+
+    function review_and_comment_file() {
+        extract($_POST);
+        $update = $this->db->query("UPDATE files SET reviewed = 1, commented = 1 WHERE id = ".$id);
+        if ($update) {
+            return 1;
+        }
     }
 
     function login(){
@@ -142,6 +149,7 @@ Class Action {
 		$data .= ", username = '$username' ";
 		$data .= ", password = '$password' ";
 		$data .= ", type = '$type' ";
+        $data .= ", area = '$area' ";
 		if(empty($id)){
 			$save = $this->db->query("INSERT INTO users set ".$data);
 		}else{

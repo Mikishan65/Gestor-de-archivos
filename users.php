@@ -1,6 +1,6 @@
 <!-- users.php -->
 <?php 
-include('db_connect.php');
+include('db_connect.php'); // Asegúrate de incluir la conexión a la base de datos
 ?>
 
 <!DOCTYPE html>
@@ -29,6 +29,7 @@ include('db_connect.php');
                             <th class="text-center">#</th>
                             <th class="text-center">Nombre</th>
                             <th class="text-center">Nombre de Usuario</th>
+                            <th class="text-center">Área</th>
                             <th class="text-center">Acción</th>
                         </tr>
                     </thead>
@@ -42,6 +43,7 @@ include('db_connect.php');
                             <td class="text-center"><?php echo $i++ ?></td>
                             <td><?php echo $row['name'] ?></td>
                             <td><?php echo $row['username'] ?></td>
+                            <td><?php echo $row['area'] ?></td>
                             <td class="text-center">
                                 <button class="btn btn-sm btn-primary editar_usuario" data-id="<?php echo $row['id'] ?>">Editar</button>
                                 <button class="btn btn-sm btn-danger borrar_usuario" data-id="<?php echo $row['id'] ?>">Eliminar</button>
@@ -86,6 +88,5 @@ include('db_connect.php');
         }
     });
 </script>
-
 </body>
 </html>

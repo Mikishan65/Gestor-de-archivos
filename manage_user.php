@@ -31,6 +31,10 @@ if(isset($_GET['id'])){
             </select>
         </div>
         <div class="form-group">
+            <label for="area">Área</label>
+            <input type="text" name="area" id="area" class="form-control" value="<?php echo isset($meta['area']) ? $meta['area']: '' ?>" required>
+        </div>
+        <div class="form-group">
             <button type="submit" class="btn btn-primary">Guardar</button>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
         </div>
